@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "installCommand": "npm install",
+  "env": {
+    "VITE_STACK_PROJECT_ID": "0958c3a7-e1ac-4e4a-946c-1b977e43a126",
+    "VITE_STACK_PUBLISHABLE_CLIENT_KEY": "pck_yak8mbrp4a16q78r088ksa4n2saz81rz7agb58r0rf02r"
+  }
+}
