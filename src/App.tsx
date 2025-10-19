@@ -1,4 +1,4 @@
-import { StackProvider, StackTheme } from '@stackframe/react';
+import { StackProvider, StackTheme, StackHandler } from '@stackframe/react';
 import { stackClientApp } from './stack';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';
@@ -9,6 +9,7 @@ function App() {
       <StackTheme>
         <BrowserRouter>
           <Routes>
+            <Route path="/handler/*" element={<StackHandler fullPage />} />
             <Route path="/*" element={<Home />} />
           </Routes>
         </BrowserRouter>

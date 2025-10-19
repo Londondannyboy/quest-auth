@@ -24,6 +24,14 @@ Following the official Neon Auth documentation exactly: https://neon.com/docs/ne
 - **GitHub Repository**: https://github.com/Londondannyboy/quest-auth
 - **Status**: ✅ DEPLOYED AND WORKING
 
+### ⚠️ Important: OAuth Configuration Fix
+**Issue Found:** Stack Auth SDK hardcoded to look for `NEXT_PUBLIC_` env vars, but Vite uses `VITE_` prefix.
+
+**Solution Applied:**
+1. Updated `src/stack.ts` to support both naming conventions
+2. Added `NEXT_PUBLIC_` variables to `vercel.json` and `.env.local`
+3. **REQUIRED:** Add `https://quest-auth.vercel.app` to trusted domains in Neon Auth dashboard
+
 ## Technical Stack
 
 ### Core Technologies
