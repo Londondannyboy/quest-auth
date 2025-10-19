@@ -1,7 +1,19 @@
+import { useEffect } from 'react';
 import { useUser } from '@stackframe/react';
 
 export default function Home() {
   const user = useUser();
+
+  useEffect(() => {
+    // Check if we have a stored redirect after successful auth
+    if (user) {
+      const storedRedirect = sessionStorage.getItem('quest_auth_redirect');
+      if (storedRedirect) {
+        sessionStorage.removeItem('quest_auth_redirect');
+        window.location.href = storedRedirect;
+      }
+    }
+  }, [user]);
 
   return (
     <div style={{ padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
